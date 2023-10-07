@@ -12,7 +12,7 @@ body{
 .calculator-grid {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto)repeat(5,100px);
@@ -23,7 +23,8 @@ body{
     font-size: 2rem;
     border: 1px solid white;
     outline: none;
-    background-color: rgba(255,255,255, 0.75);
+    /*background-color: rgba(255,255,255, 0.75);*/
+    background: linear-gradient(to left, rgba(231, 219, 255, 0.92), rgba(209, 231, 253, 0.92))
 }
 
 .calculator-grid > button:hover{
@@ -31,5 +32,33 @@ background-color: rgba(255,255,255, 0.9);
 }
 
 .span-two {
+    grid-column: span 2;
+}
 
+.output {
+    grid-column: 1 / -1;
+    background: linear-gradient(to right,rgba(203, 178, 255, 0.50), rgba(255, 158, 244, 0.5)) ;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;    
+}
+
+.output .previous-operand {
+    color: rgba(255,255,255, 0.5);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.calculator-grid > .operand{
+    background: rgba(211, 191, 255, 0.75);
+    /*background: linear-gradient(to left, rgba(231, 219, 255, 0.92), rgba(209, 231, 253, 0.92));*/
 }
